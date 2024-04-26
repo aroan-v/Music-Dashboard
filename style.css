@@ -1,0 +1,774 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Font Face Definitions for Inter Font Family */
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Inter-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: normal;
+  font-style: italic;
+  src: url("fonts/Inter-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 600;
+  src: url("fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+body {
+  font-family: Inter;
+  height: 100vh;
+  background-color: #000000;
+  color: white;
+}
+
+/* Borders */
+
+/* End of borders */
+
+.container {
+  display: grid;
+  position: relative;
+  grid-template-columns: minmax(70px, 1fr) minmax(380px, 3fr) minmax(225px, 1fr);
+  grid-template-rows: auto 1fr 130px;
+
+  padding: 20px;
+  gap: 20px;
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+.header {
+  grid-column: 2 / 4;
+
+  display: grid;
+  grid-template-columns: minmax(380px, 3fr) minmax(225px, 1fr);
+  place-items: center;
+  overflow: scroll;
+}
+
+.player {
+  grid-column: 1 / 3;
+}
+
+.search h3 {
+  display: none;
+}
+
+/* Header Children */
+
+.greeting {
+  font-family: "Poppins", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  gap: 20px;
+
+  width: 95%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.menu {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+
+  letter-spacing: 0.05em;
+  color: white;
+
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.menu > div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.search {
+  /* grid-column: 1 / 3; */
+
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 11px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.search input[type="text"] {
+  border: none;
+  outline: none;
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
+}
+
+/* End of Header Children */
+
+/* sidebar children */
+
+.sidebar {
+  display: grid;
+  grid-template-rows: 140px 1fr;
+  grid-row: 1 / 3;
+
+  place-items: center;
+  gap: 20px;
+}
+
+.music-logo {
+  grid-area: 1 / 1;
+}
+
+.music-logo img {
+  width: 100%;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-self: start;
+  width: 100%;
+}
+
+.mobile {
+  display: none;
+}
+
+ul ol,
+.button,
+.artist-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+}
+
+h3,
+.song-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height */
+  letter-spacing: 0.05em;
+}
+
+.sub-panel {
+  border: 1.20805px solid #585858;
+  border-radius: 18.1208px;
+  padding: 10px 20px;
+  flex: 1;
+}
+
+.listen-button svg,
+.watch-button svg,
+.experience-button svg,
+.discover-button svg {
+  order: -1;
+}
+
+.sub-panel ul {
+  padding: 8px;
+}
+
+/* end of sidebar children */
+
+/* main-area children */
+
+h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 38px;
+  /* identical to box height */
+  letter-spacing: 0.05em;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experience-area,
+.top-artists {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: #121212;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.main-area-heading,
+.experience-area-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.artists-container {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+  align-items: center;
+  gap: 25px;
+}
+
+.artists-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.artist-wrapper img {
+  order: -1;
+  filter: grayscale(100%);
+}
+
+.artist-buttons > * {
+  margin: 0px 2.5px;
+}
+
+#artist-5,
+#artist-6 {
+  display: none;
+}
+
+/* end of main-area children */
+
+/* Experience Area */
+
+.show-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  row-gap: 30px;
+  column-gap: 20px;
+}
+
+.experience-area img,
+.artists-container img {
+  width: 100%;
+  height: auto;
+}
+
+.show-1,
+.show-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.check-dates,
+p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+}
+
+.check-dates {
+  border: 0.5px solid #ffffff;
+  border-radius: 4px;
+  padding: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+}
+
+/* end of experience-area */
+
+/* start of right-controls */
+
+.queue,
+.featured-works {
+  background-color: #121212;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.queue {
+  margin-bottom: 20px;
+}
+
+.queue h3,
+.featured-works h3 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.work-container div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  align-content: center;
+  row-gap: 5px;
+}
+
+.work-container svg {
+  justify-self: end;
+}
+
+.queue-container,
+.work-container,
+.current-song {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-container,
+.current-song {
+  display: grid;
+  /* grid-template-rows: repeat(2, minmax(0px, 1fr)); */
+  grid-template-columns: min-content auto;
+  column-gap: 10px;
+}
+
+.current-song .song-title {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.queue-container img {
+  grid-row: 1 / span 2;
+}
+
+.song-title,
+.song-container p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.work-img {
+  order: -1;
+  grid-column: span 2;
+}
+
+.work-img img {
+  width: 100%;
+  height: auto;
+}
+
+.work-container a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* End of right-controls */
+
+/* Start of footer */
+
+footer {
+  /* grid-column: span 2; */
+  height: 121px;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+
+  max-width: 1472px;
+
+  left: 50%; /* Shift container to the center horizontally */
+  transform: translate(-50%); /* Center the container */
+}
+
+.current-song {
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.slider,
+.control-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.control-buttons {
+  gap: 20px;
+}
+
+.slider {
+  width: 70%;
+}
+
+.slider input[type="range"] {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.shuffle-button,
+.repeat-button {
+  padding: 0 20px;
+}
+
+.player-controls {
+  display: flex;
+  flex: 3 3 0;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.current-song {
+  flex: 1;
+}
+
+.personal-logo {
+  flex: 1 2 0;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+
+/***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #ff7629;
+  height: 2px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #ff7629;
+  height: 2px;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -8px; /* Centers thumb on the track */
+  background-color: #ffffff;
+  width: 4px;
+  height: 20px;
+}
+
+/***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  background-color: #ffffff;
+  width: 4px;
+  height: 20px;
+}
+
+/* End of footer */
+
+/* Pseudo-classes */
+
+ol:hover {
+  text-decoration: underline;
+}
+
+/* .search input:focus + svg {
+  display: none;
+} */
+
+ol:hover,
+.artist-name:hover,
+.menu .home:hover,
+.menu .settings:hover,
+.menu svg:hover image,
+.button:hover,
+.artist-buttons > *:hover,
+.song-container:hover span,
+.song-container:hover p,
+.show-1 h3:hover,
+.show-2 h3:hover,
+.mobile > div:hover,
+.work-container svg:hover,
+.work-container a p:hover,
+.control-buttons > svg:not(.play-button):hover {
+  color: #ff7629;
+  filter: invert(54%) sepia(68%) saturate(2201%) hue-rotate(340deg)
+    brightness(102%) contrast(105%);
+}
+
+.play-button:hover {
+  filter: sepia(60%) saturate(67%) hue-rotate(265deg) brightness(117%)
+    contrast(100%);
+}
+
+.song-container:hover img,
+.greeting img:hover {
+  transform: scale(1.04);
+  filter: sepia(80%);
+}
+
+.artist-wrapper img:hover,
+.artist-name:hover + img {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+.work-container img:hover {
+  border: 1px solid #ff7629;
+  border-radius: 5.5px;
+  transform: scale(1.04);
+  filter: brightness(120%);
+}
+
+.music-logo:hover,
+.personal-logo a:hover {
+  transform: scale(1.1);
+}
+
+/* End of pseudo-classes */
+
+/* Media queries */
+
+@media (max-width: 950px) {
+  .artists-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .player-controls {
+    display: none;
+  }
+}
+
+@media (max-width: 1117px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .mobile div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile h3 {
+    font-size: 1.6vw;
+  }
+
+  .mobile image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1238px) {
+  #artist-5,
+  #artist-6 {
+    display: flex;
+  }
+}
+
+@media (max-width: 1251px) {
+  .menu {
+    flex-direction: column;
+    padding-left: 20%;
+    box-sizing: border-box;
+  }
+
+  .search {
+    width: auto;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-sizing: content-box;
+  }
+
+  .search form {
+    display: none;
+  }
+
+  .search h3 {
+    display: inline;
+  }
+}
